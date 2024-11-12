@@ -7,3 +7,11 @@ services:
     build: ./example-server
     volumes:
       - ../tests:/tests
+  vidos:
+    build: ./vidos
+    volumes:
+      - ../tests:/tests
+    network_mode: "host"
+    extra_hosts:
+      - "local-test.verifier.service.eu.vidos.local:172.17.0.1"
+
